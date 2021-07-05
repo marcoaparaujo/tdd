@@ -1,5 +1,6 @@
 package exemplo2;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -9,87 +10,75 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LocacaoTest {
 
+    private Filme filme;
+    private List<Filme> filmes;
+    private Locacao locacao;
+
+    @BeforeEach
+    void setUp() {
+        filmes = new ArrayList<Filme>();
+        filme = new Filme("Os Vingadores", 10.0f);
+        locacao = new Locacao();
+    }
+
     @Test
-    public void deveAlugarZeroFilme() {
-        Filme filme = new Filme("Os Vingadores", 10.0f);
-        List<Filme> filmes = new ArrayList<Filme>();
-        Locacao locacao = new Locacao();
+    void deveAlugarZeroFilme() {
         assertEquals(0.0f, locacao.calcularAluguel(filmes));
     }
 
     @Test
-    public void deveAlugarUmFilme() {
-        Filme filme = new Filme("Os Vingadores", 10.0f);
-        List<Filme> filmes = new ArrayList<Filme>();
+    void deveAlugarUmFilme() {
         filmes.add(filme);
-        Locacao locacao = new Locacao();
         assertEquals(10.0f, locacao.calcularAluguel(filmes));
     }
 
     @Test
-    public void deveAlugarDoisFilmes() {
-        Filme filme = new Filme("Os Vingadores", 10.0f);
-        List<Filme> filmes = new ArrayList<Filme>();
+    void deveAlugarDoisFilmes() {
         filmes.add(filme);
         filmes.add(filme);
-        Locacao locacao = new Locacao();
         assertEquals(20.0f, locacao.calcularAluguel(filmes));
     }
 
     @Test
-    public void deveAlugarTresFilmes() {
-        Filme filme = new Filme("Os Vingadores", 10.0f);
-        List<Filme> filmes = new ArrayList<Filme>();
+    void deveAlugarTresFilmes() {
         filmes.add(filme);
         filmes.add(filme);
         filmes.add(filme);
-        Locacao locacao = new Locacao();
         assertEquals(27.5f, locacao.calcularAluguel(filmes));
     }
 
     @Test
-    public void deveAlugarQuatroFilmes() {
-        Filme filme = new Filme("Os Vingadores", 10.0f);
-        List<Filme> filmes = new ArrayList<Filme>();
+    void deveAlugarQuatroFilmes() {
         filmes.add(filme);
         filmes.add(filme);
         filmes.add(filme);
         filmes.add(filme);
-        Locacao locacao = new Locacao();
         assertEquals(32.5f, locacao.calcularAluguel(filmes));
     }
 
     @Test
-    public void deveAlugarCincoFilmes() {
-        Filme filme = new Filme("Os Vingadores", 10.0f);
-        List<Filme> filmes = new ArrayList<Filme>();
+    void deveAlugarCincoFilmes() {
         filmes.add(filme);
         filmes.add(filme);
         filmes.add(filme);
         filmes.add(filme);
         filmes.add(filme);
-        Locacao locacao = new Locacao();
         assertEquals(35.0f, locacao.calcularAluguel(filmes));
     }
 
     @Test
-    public void deveAlugarSeisFilmes() {
-        Filme filme = new Filme("Os Vingadores", 10.0f);
-        List<Filme> filmes = new ArrayList<Filme>();
+    void deveAlugarSeisFilmes() {
         filmes.add(filme);
         filmes.add(filme);
         filmes.add(filme);
         filmes.add(filme);
         filmes.add(filme);
         filmes.add(filme);
-        Locacao locacao = new Locacao();
         assertEquals(35.0f, locacao.calcularAluguel(filmes));
     }
 
     @Test
-    public void deveAlugarSeteFilmes() {
-        Filme filme = new Filme("Os Vingadores", 10.0f);
-        List<Filme> filmes = new ArrayList<Filme>();
+    void deveAlugarSeteFilmes() {
         filmes.add(filme);
         filmes.add(filme);
         filmes.add(filme);
@@ -97,7 +86,6 @@ public class LocacaoTest {
         filmes.add(filme);
         filmes.add(filme);
         filmes.add(filme);
-        Locacao locacao = new Locacao();
         assertEquals(45.0f, locacao.calcularAluguel(filmes));
     }
 
