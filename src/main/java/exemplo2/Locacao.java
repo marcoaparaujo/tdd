@@ -4,18 +4,17 @@ import java.util.List;
 
 public class Locacao {
 
-    public double calcularAluguel(List<Filme> filmes) {
-        double valor = 0;
-
+    public float calcularAluguel(List<Filme> filmes) {
+        float valor = 0.0f;
         for (int i = 0; i < filmes.size(); i++) {
             if (i == 2) {
-                valor += filmes.get(i).getPreco() * 0.75;
+                valor += filmes.get(i).getPreco() * 0.75f;
             } else if (i == 3) {
-                valor += filmes.get(i).getPreco() * 0.50;
+                valor += filmes.get(i).getPreco() * 0.50f;
             } else if (i == 4) {
-                valor += filmes.get(i).getPreco() * 0.25;
+                valor += filmes.get(i).getPreco() * 0.25f;
             } else if (i == 5) {
-                valor += 0.0;
+                valor += 0.0f;
             } else {
                 valor += filmes.get(i).getPreco();
             }
